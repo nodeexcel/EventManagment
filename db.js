@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/EventManagement', { useNewUrlParser: true });
+mongoose.connect('mongodb+srv://atul:3vG8YOkIe9JrcrZK@cluster0-2zgda.mongodb.net/test?retryWrites=true', { useNewUrlParser: true });
 
 module.exports = mongoose;

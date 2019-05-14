@@ -13,6 +13,10 @@ const Event = mongoose.model('Event', {
             required: true
         }
     },
+    locationName: {
+        type: String,
+        required: true
+    },
     EventStartDate: {
         type: Date
     },

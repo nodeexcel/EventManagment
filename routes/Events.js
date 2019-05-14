@@ -13,14 +13,15 @@ router.get('/get', async (req, res, next) => {
     let location = {}
     try {
         if (req.query.lat) {
-            location['lat'] =  parseFloat(req.query.lat);
+            location['lat'] = parseFloat(req.query.lat);
         }
         if (req.query.long) {
             location['long'] = parseFloat(req.query.long);
         }
         delete req.query.lat;
         delete req.query.long;
-        req.query['location'] = location
+        if (location['lat'] && location['long'])
+            req.query['location'] = location
         let eventInfo = await event.getAllEvents(req.query);
         res.send(eventInfo);
     } catch (e) {
